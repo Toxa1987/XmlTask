@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="gems">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="gem" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="Id" type="customId" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="customId">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="[a-zA-z]{5}\d+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="visualParametersType">
+        <xs:sequence>
+            <xs:element name="color" default="Colorless">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Z][a-z]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="transparency" default="100">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:maxInclusive value="100"/>
+                        <xs:minInclusive value="0"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="gemType">
+        <xs:sequence>
+            <xs:element name="name">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[A-Z][a-z]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="origin">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="Russia"/>
+                        <xs:enumeration value="Columbia"/>
+                        <xs:enumeration value="Myanmar"/>
+                        <xs:enumeration value="USA"/>
+                        <xs:enumeration value="Brazil"/>
+                        <xs:enumeration value="Czech"/>
+                        <xs:enumeration value="Madagascar"/>
+                        <xs:enumeration value="Tanzania"/>
+                        <xs:enumeration value="South Africa"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="hardness">
+                <xs:simpleType>
+                    <xs:restriction base="xs:byte">
+                        <xs:enumeration value="10"/>
+                        <xs:enumeration value="8"/>
+                        <xs:enumeration value="9"/>
+                        <xs:enumeration value="7"/>
+                        <xs:enumeration value="6"/>
+                        <xs:enumeration value="5"/>
+                        <xs:enumeration value="4"/>
+                        <xs:enumeration value="3"/>
+                        <xs:enumeration value="2"/>
+                        <xs:enumeration value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="value">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minInclusive value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="timeOfExtraction" type="xs:gYearMonth"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="preciousType">
+        <xs:complexContent>
+            <xs:extension base="gemType">
+                <xs:sequence>
+                    <xs:element type="visualParametersType" name="visualParameters"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="semipreciousType">
+        <xs:complexContent>
+            <xs:extension base="gemType">
+                <xs:sequence>
+                    <xs:element type="visualParametersType" name="visualParameters"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="gem" type="gemType" abstract="true"/>
+    <xs:element name="Precious" type="preciousType" substitutionGroup="gem"/>
+    <xs:element name="Semiprecious" type="semipreciousType" substitutionGroup="gem"/>
+
+</xs:schema>
