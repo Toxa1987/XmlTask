@@ -1,52 +1,32 @@
 package by.anton.xmltask;
 
-import org.xml.sax.Attributes;
+import by.anton.xmltask.builder.DomGemsBuilder;
+import by.anton.xmltask.builder.GemsBuilder;
+import by.anton.xmltask.builder.GemsHandler;
+import by.anton.xmltask.builder.SaxGemsBuilder;
+import by.anton.xmltask.entity.*;
+import by.anton.xmltask.exception.GemEntityException;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
+import org.xml.sax.XMLReader;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
+import javax.xml.parsers.*;
+import java.io.File;
+import java.io.IOException;
+import java.time.YearMonth;
+import java.util.ArrayList;
 
 /**
  * Hello world!
  */
 public class App {
+    public static ArrayList<AbstractGem> arrayList = new ArrayList<>();
 
-    public static void main(String[] args) throws ParserConfigurationException, SAXException {
-
-        SAXParserFactory factory = SAXParserFactory.newInstance();
-        SAXParser parser = factory.newSAXParser();
-    }
-    private class XmlHandler extends DefaultHandler{
-        @Override
-        public void startDocument() throws SAXException {
-            super.startDocument();
-        }
-
-        @Override
-        public void endDocument() throws SAXException {
-            super.endDocument();
-        }
-
-        @Override
-        public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-            super.startElement(uri, localName, qName, attributes);
-        }
-
-        @Override
-        public void characters(char[] ch, int start, int length) throws SAXException {
-            super.characters(ch, start, length);
-        }
-
-        @Override
-        public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
-            super.ignorableWhitespace(ch, start, length);
-        }
-
-        @Override
-        public void endElement(String uri, String localName, String qName) throws SAXException {
-            super.endElement(uri, localName, qName);
-        }
+    public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException, GemEntityException {
+        String path="./src/main/resources/gems.xml";
+        SaxGemsBuilder saxGemsBuilder = (SaxGemsBuilder) GemsBuilder.createGemsBuilder("Sax");
+        saxGemsBuilder.buildGems(path);
+        arrayList=saxGemsBuilder.getAbstractGems();
+        arrayList.forEach(System.out::println);
     }
 }

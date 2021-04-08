@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<gems  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gems.xsd" Id="Anton123">
+<gems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="gems.xsd">
 
-    <Precious>
+    <Precious Id="gem1" Uniqueness="unique">
         <name>Diamond</name>
         <origin>Russia</origin>
         <hardness>10</hardness>
-        <value >5</value>
+        <value>5</value>
         <timeOfExtraction>2020-03</timeOfExtraction>
         <visualParameters>
             <color>Colorless</color>
             <transparency>100</transparency>
         </visualParameters>
     </Precious>
-    <Precious>
+    <Precious Id="gem2">
         <name>Emerald</name>
         <origin>Columbia</origin>
         <hardness>8</hardness>
@@ -23,7 +23,7 @@
             <transparency>98</transparency>
         </visualParameters>
     </Precious>
-    <Precious>
+    <Precious Id="gem3">
         <name>Ruby</name>
         <origin>Myanmar</origin>
         <hardness>9</hardness>
@@ -34,7 +34,7 @@
             <transparency>99</transparency>
         </visualParameters>
     </Precious>
-    <Precious>
+    <Precious Id="gem4">
         <name>Sapphire</name>
         <origin>USA</origin>
         <hardness>9</hardness>
@@ -45,7 +45,7 @@
             <transparency>95</transparency>
         </visualParameters>
     </Precious>
-    <Semiprecious>
+    <Semiprecious Id="gem5">
         <name>Aquamarine</name>
         <origin>Russia</origin>
         <hardness>8</hardness>
@@ -56,7 +56,7 @@
             <transparency>99</transparency>
         </visualParameters>
     </Semiprecious>
-    <Precious>
+    <Precious Id="gem6">
         <name>Beryl</name>
         <origin>Brazil</origin>
         <hardness>8</hardness>
@@ -67,7 +67,7 @@
             <transparency>99</transparency>
         </visualParameters>
     </Precious>
-    <Precious>
+    <Precious Id="gem7">
         <name>Alexandrite</name>
         <origin>Russia</origin>
         <hardness>8</hardness>
@@ -78,7 +78,7 @@
             <transparency>98</transparency>
         </visualParameters>
     </Precious>
-    <Semiprecious>
+    <Semiprecious Id="gem8">
         <name>Pirop</name>
         <origin>Czech</origin>
         <hardness>7</hardness>
@@ -89,7 +89,7 @@
             <transparency>80</transparency>
         </visualParameters>
     </Semiprecious>
-    <Semiprecious>
+    <Semiprecious Id="gem9">
         <name>Amethyst</name>
         <origin>Brazil</origin>
         <hardness>7</hardness>
@@ -100,7 +100,7 @@
             <transparency>90</transparency>
         </visualParameters>
     </Semiprecious>
-    <Semiprecious>
+    <Semiprecious Id="gem10">
         <name>Tourmaline</name>
         <origin>Madagascar</origin>
         <hardness>7</hardness>
@@ -111,18 +111,18 @@
             <transparency>85</transparency>
         </visualParameters>
     </Semiprecious>
-    <Semiprecious>
+    <Semiprecious Id="gem11">
         <name>Topaz</name>
         <origin>Russia</origin>
         <hardness>7</hardness>
         <value>10</value>
         <timeOfExtraction>2020-12</timeOfExtraction>
         <visualParameters>
-            <color>Viol</color>
+            <color>Pink</color>
             <transparency>80</transparency>
         </visualParameters>
     </Semiprecious>
-    <Semiprecious>
+    <Semiprecious Id="gem12">
         <name>Tanzanite</name>
         <origin>Tanzania</origin>
         <hardness>6</hardness>
@@ -133,7 +133,7 @@
             <transparency>95</transparency>
         </visualParameters>
     </Semiprecious>
-    <Precious>
+    <Precious Id="gem13">
         <name>Emerald</name>
         <origin>Columbia</origin>
         <hardness>8</hardness>
@@ -144,7 +144,7 @@
             <transparency>90</transparency>
         </visualParameters>
     </Precious>
-    <Precious>
+    <Precious Id="gem14">
         <name>Ruby</name>
         <origin>Myanmar</origin>
         <hardness>9</hardness>
@@ -155,7 +155,7 @@
             <transparency>96</transparency>
         </visualParameters>
     </Precious>
-    <Semiprecious>
+    <Semiprecious Id="gem15">
         <name>Amethyst</name>
         <origin>Brazil</origin>
         <hardness>7</hardness>
@@ -166,9 +166,9 @@
             <transparency>97</transparency>
         </visualParameters>
     </Semiprecious>
-    <Semiprecious>
+    <Semiprecious Id="gem16">
         <name>Tourmaline</name>
-        <origin>South Africa</origin>
+        <origin>South_Africa</origin>
         <hardness>7</hardness>
         <value>30</value>
         <timeOfExtraction>2020-01</timeOfExtraction>
